@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF0522D619CC72610067D8F2 /* RealWorldChallengesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0522D519CC72610067D8F2 /* RealWorldChallengesTVC.swift */; };
 		CF09A3C419CB299D00134B09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF09A3C319CB299D00134B09 /* AppDelegate.swift */; };
 		CF09A3C619CB299E00134B09 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF09A3C519CB299E00134B09 /* ViewController.swift */; };
 		CF09A3C919CB299E00134B09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF09A3C719CB299E00134B09 /* Main.storyboard */; };
 		CF09A3CB19CB299E00134B09 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF09A3CA19CB299E00134B09 /* Images.xcassets */; };
 		CF09A3CE19CB299E00134B09 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF09A3CC19CB299E00134B09 /* LaunchScreen.xib */; };
 		CF09A3DA19CB299E00134B09 /* GetSwifterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF09A3D919CB299E00134B09 /* GetSwifterTests.swift */; };
+		CF09A3E619CB4FD500134B09 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF09A3E519CB4FD500134B09 /* UIKit.framework */; };
+		CF09A3E819CB4FE400134B09 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF09A3E719CB4FE400134B09 /* CoreFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CF0522D519CC72610067D8F2 /* RealWorldChallengesTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealWorldChallengesTVC.swift; path = ../RealWorldChallengesTVC.swift; sourceTree = "<group>"; };
 		CF09A3BE19CB299D00134B09 /* GetSwifter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetSwifter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF09A3C219CB299D00134B09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF09A3C319CB299D00134B09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +40,8 @@
 		CF09A3D319CB299E00134B09 /* GetSwifterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GetSwifterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF09A3D819CB299E00134B09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF09A3D919CB299E00134B09 /* GetSwifterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSwifterTests.swift; sourceTree = "<group>"; };
+		CF09A3E519CB4FD500134B09 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CF09A3E719CB4FE400134B09 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +49,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF09A3E819CB4FE400134B09 /* CoreFoundation.framework in Frameworks */,
+				CF09A3E619CB4FD500134B09 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +67,8 @@
 		CF09A3B519CB299D00134B09 = {
 			isa = PBXGroup;
 			children = (
+				CF09A3E719CB4FE400134B09 /* CoreFoundation.framework */,
+				CF09A3E519CB4FD500134B09 /* UIKit.framework */,
 				CF09A3C019CB299D00134B09 /* GetSwifter */,
 				CF09A3D619CB299E00134B09 /* GetSwifterTests */,
 				CF09A3BF19CB299D00134B09 /* Products */,
@@ -77,6 +87,7 @@
 		CF09A3C019CB299D00134B09 /* GetSwifter */ = {
 			isa = PBXGroup;
 			children = (
+				CF0522D519CC72610067D8F2 /* RealWorldChallengesTVC.swift */,
 				CF09A3C319CB299D00134B09 /* AppDelegate.swift */,
 				CF09A3C519CB299E00134B09 /* ViewController.swift */,
 				CF09A3C719CB299E00134B09 /* Main.storyboard */,
@@ -214,6 +225,7 @@
 			files = (
 				CF09A3C619CB299E00134B09 /* ViewController.swift in Sources */,
 				CF09A3C419CB299D00134B09 /* AppDelegate.swift in Sources */,
+				CF0522D619CC72610067D8F2 /* RealWorldChallengesTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +353,7 @@
 				INFOPLIST_FILE = GetSwifter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -351,6 +364,7 @@
 				INFOPLIST_FILE = GetSwifter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -407,6 +421,7 @@
 				CF09A3DF19CB299E00134B09 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF09A3E019CB299E00134B09 /* Build configuration list for PBXNativeTarget "GetSwifterTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +430,7 @@
 				CF09A3E219CB299E00134B09 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
