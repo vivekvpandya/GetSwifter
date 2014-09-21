@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		CF0522D619CC72610067D8F2 /* RealWorldChallengesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0522D519CC72610067D8F2 /* RealWorldChallengesTVC.swift */; };
+		CF05232D19CCB1F10067D8F2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF05232A19CCB1DD0067D8F2 /* Alamofire.framework */; };
+		CF05232F19CCB2180067D8F2 /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = CF05232A19CCB1DD0067D8F2 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CF05233119CCBFF60067D8F2 /* RealWorldChallengeDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF05233019CCBFF60067D8F2 /* RealWorldChallengeDetailsVC.swift */; };
 		CF09A3C419CB299D00134B09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF09A3C319CB299D00134B09 /* AppDelegate.swift */; };
 		CF09A3C619CB299E00134B09 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF09A3C519CB299E00134B09 /* ViewController.swift */; };
 		CF09A3C919CB299E00134B09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF09A3C719CB299E00134B09 /* Main.storyboard */; };
@@ -16,9 +19,33 @@
 		CF09A3DA19CB299E00134B09 /* GetSwifterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF09A3D919CB299E00134B09 /* GetSwifterTests.swift */; };
 		CF09A3E619CB4FD500134B09 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF09A3E519CB4FD500134B09 /* UIKit.framework */; };
 		CF09A3E819CB4FE400134B09 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF09A3E719CB4FE400134B09 /* CoreFoundation.framework */; };
+		CF12E3EB19CE2A640046CB0F /* CircularProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF12E3EA19CE2A640046CB0F /* CircularProfileView.swift */; };
+		CF53027819CE3E5B003ECACC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF53027719CE3E5B003ECACC /* QuartzCore.framework */; };
+		CF7A281919CDAD7100A5E505 /* FunChallengesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7A281819CDAD7100A5E505 /* FunChallengesTVC.swift */; };
+		CF7A281F19CDDB0B00A5E505 /* FunChallengeDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7A281E19CDDB0B00A5E505 /* FunChallengeDetailsVC.swift */; };
+		CF7A282119CDFD8400A5E505 /* CompletedChallengeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7A282019CDFD8400A5E505 /* CompletedChallengeTableViewCell.swift */; };
+		CF7A282319CDFF1E00A5E505 /* CompletedChallengeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7A282219CDFF1E00A5E505 /* CompletedChallengeVC.swift */; };
+		CF95AA5E19CE175F00F1654B /* SwiftLeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF95AA5D19CE175F00F1654B /* SwiftLeaderTableViewCell.swift */; };
+		CF95AA6219CE190900F1654B /* SwiftLeaderBoardTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF95AA6119CE190900F1654B /* SwiftLeaderBoardTVC.swift */; };
+		CFC8373E19CEB9D50062E5E3 /* SwiftAlgoLeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC8373D19CEB9D50062E5E3 /* SwiftAlgoLeaderTableViewCell.swift */; };
+		CFC8374219CEBA360062E5E3 /* SwiftAlgoLeaderBoardTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC8374119CEBA360062E5E3 /* SwiftAlgoLeaderBoardTVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		CF05232919CCB1DD0067D8F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF05232419CCB1DD0067D8F2 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
+			remoteInfo = Alamofire;
+		};
+		CF05232B19CCB1DD0067D8F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CF05232419CCB1DD0067D8F2 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
+			remoteInfo = AlamofireTests;
+		};
 		CF09A3D419CB299E00134B09 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = CF09A3B619CB299D00134B09 /* Project object */;
@@ -28,8 +55,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		CF05232E19CCB1FD0067D8F2 /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CF05232F19CCB2180067D8F2 /* Alamofire.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		CF0522D519CC72610067D8F2 /* RealWorldChallengesTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealWorldChallengesTVC.swift; path = ../RealWorldChallengesTVC.swift; sourceTree = "<group>"; };
+		CF05232419CCB1DD0067D8F2 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
+		CF05233019CCBFF60067D8F2 /* RealWorldChallengeDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealWorldChallengeDetailsVC.swift; sourceTree = "<group>"; };
 		CF09A3BE19CB299D00134B09 /* GetSwifter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetSwifter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF09A3C219CB299D00134B09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF09A3C319CB299D00134B09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +85,16 @@
 		CF09A3D919CB299E00134B09 /* GetSwifterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSwifterTests.swift; sourceTree = "<group>"; };
 		CF09A3E519CB4FD500134B09 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CF09A3E719CB4FE400134B09 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		CF12E3EA19CE2A640046CB0F /* CircularProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProfileView.swift; sourceTree = "<group>"; };
+		CF53027719CE3E5B003ECACC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		CF7A281819CDAD7100A5E505 /* FunChallengesTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunChallengesTVC.swift; sourceTree = "<group>"; };
+		CF7A281E19CDDB0B00A5E505 /* FunChallengeDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FunChallengeDetailsVC.swift; path = ../FunChallengeDetailsVC.swift; sourceTree = "<group>"; };
+		CF7A282019CDFD8400A5E505 /* CompletedChallengeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedChallengeTableViewCell.swift; sourceTree = "<group>"; };
+		CF7A282219CDFF1E00A5E505 /* CompletedChallengeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedChallengeVC.swift; sourceTree = "<group>"; };
+		CF95AA5D19CE175F00F1654B /* SwiftLeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftLeaderTableViewCell.swift; sourceTree = "<group>"; };
+		CF95AA6119CE190900F1654B /* SwiftLeaderBoardTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftLeaderBoardTVC.swift; sourceTree = "<group>"; };
+		CFC8373D19CEB9D50062E5E3 /* SwiftAlgoLeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftAlgoLeaderTableViewCell.swift; sourceTree = "<group>"; };
+		CFC8374119CEBA360062E5E3 /* SwiftAlgoLeaderBoardTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftAlgoLeaderBoardTVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +102,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF53027819CE3E5B003ECACC /* QuartzCore.framework in Frameworks */,
+				CF05232D19CCB1F10067D8F2 /* Alamofire.framework in Frameworks */,
 				CF09A3E819CB4FE400134B09 /* CoreFoundation.framework in Frameworks */,
 				CF09A3E619CB4FD500134B09 /* UIKit.framework in Frameworks */,
 			);
@@ -64,14 +119,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF05232519CCB1DD0067D8F2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CF05232A19CCB1DD0067D8F2 /* Alamofire.framework */,
+				CF05232C19CCB1DD0067D8F2 /* AlamofireTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		CF09A3B519CB299D00134B09 = {
 			isa = PBXGroup;
 			children = (
+				CF53027719CE3E5B003ECACC /* QuartzCore.framework */,
 				CF09A3E719CB4FE400134B09 /* CoreFoundation.framework */,
 				CF09A3E519CB4FD500134B09 /* UIKit.framework */,
 				CF09A3C019CB299D00134B09 /* GetSwifter */,
 				CF09A3D619CB299E00134B09 /* GetSwifterTests */,
 				CF09A3BF19CB299D00134B09 /* Products */,
+				CF05232419CCB1DD0067D8F2 /* Alamofire.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,10 +153,20 @@
 		CF09A3C019CB299D00134B09 /* GetSwifter */ = {
 			isa = PBXGroup;
 			children = (
+				CF12E3EA19CE2A640046CB0F /* CircularProfileView.swift */,
+				CF95AA6119CE190900F1654B /* SwiftLeaderBoardTVC.swift */,
+				CFC8374119CEBA360062E5E3 /* SwiftAlgoLeaderBoardTVC.swift */,
+				CF7A282219CDFF1E00A5E505 /* CompletedChallengeVC.swift */,
+				CF7A281E19CDDB0B00A5E505 /* FunChallengeDetailsVC.swift */,
 				CF0522D519CC72610067D8F2 /* RealWorldChallengesTVC.swift */,
+				CF7A281819CDAD7100A5E505 /* FunChallengesTVC.swift */,
 				CF09A3C319CB299D00134B09 /* AppDelegate.swift */,
 				CF09A3C519CB299E00134B09 /* ViewController.swift */,
 				CF09A3C719CB299E00134B09 /* Main.storyboard */,
+				CF95AA5D19CE175F00F1654B /* SwiftLeaderTableViewCell.swift */,
+				CFC8373D19CEB9D50062E5E3 /* SwiftAlgoLeaderTableViewCell.swift */,
+				CF7A282019CDFD8400A5E505 /* CompletedChallengeTableViewCell.swift */,
+				CF05233019CCBFF60067D8F2 /* RealWorldChallengeDetailsVC.swift */,
 				CF09A3CA19CB299E00134B09 /* Images.xcassets */,
 				CF09A3CC19CB299E00134B09 /* LaunchScreen.xib */,
 				CF09A3C119CB299D00134B09 /* Supporting Files */,
@@ -133,6 +209,7 @@
 				CF09A3BA19CB299D00134B09 /* Sources */,
 				CF09A3BB19CB299D00134B09 /* Frameworks */,
 				CF09A3BC19CB299D00134B09 /* Resources */,
+				CF05232E19CCB1FD0067D8F2 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -190,6 +267,12 @@
 			mainGroup = CF09A3B519CB299D00134B09;
 			productRefGroup = CF09A3BF19CB299D00134B09 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CF05232519CCB1DD0067D8F2 /* Products */;
+					ProjectRef = CF05232419CCB1DD0067D8F2 /* Alamofire.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				CF09A3BD19CB299D00134B09 /* GetSwifter */,
@@ -197,6 +280,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		CF05232A19CCB1DD0067D8F2 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = CF05232919CCB1DD0067D8F2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CF05232C19CCB1DD0067D8F2 /* AlamofireTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AlamofireTests.xctest;
+			remoteRef = CF05232B19CCB1DD0067D8F2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		CF09A3BC19CB299D00134B09 /* Resources */ = {
@@ -223,8 +323,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF95AA5E19CE175F00F1654B /* SwiftLeaderTableViewCell.swift in Sources */,
 				CF09A3C619CB299E00134B09 /* ViewController.swift in Sources */,
+				CF7A281F19CDDB0B00A5E505 /* FunChallengeDetailsVC.swift in Sources */,
+				CF12E3EB19CE2A640046CB0F /* CircularProfileView.swift in Sources */,
+				CF7A281919CDAD7100A5E505 /* FunChallengesTVC.swift in Sources */,
 				CF09A3C419CB299D00134B09 /* AppDelegate.swift in Sources */,
+				CF7A282119CDFD8400A5E505 /* CompletedChallengeTableViewCell.swift in Sources */,
+				CFC8374219CEBA360062E5E3 /* SwiftAlgoLeaderBoardTVC.swift in Sources */,
+				CF05233119CCBFF60067D8F2 /* RealWorldChallengeDetailsVC.swift in Sources */,
+				CF95AA6219CE190900F1654B /* SwiftLeaderBoardTVC.swift in Sources */,
+				CFC8373E19CEB9D50062E5E3 /* SwiftAlgoLeaderTableViewCell.swift in Sources */,
+				CF7A282319CDFF1E00A5E505 /* CompletedChallengeVC.swift in Sources */,
 				CF0522D619CC72610067D8F2 /* RealWorldChallengesTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
