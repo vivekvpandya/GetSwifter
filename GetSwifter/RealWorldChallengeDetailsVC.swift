@@ -8,21 +8,21 @@
 
 import UIKit
 import Alamofire
+import Social
 
 class RealWorldChallengeDetailsVC: UIViewController, UIAlertViewDelegate {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var challengeLabel: UILabel!
-    
-    @IBOutlet weak var regEndDateLabel: UILabel!
-    @IBOutlet weak var subEndDateLabel: UILabel!
-    @IBOutlet weak var technologyLabel: UILabel!
-    
-    @IBOutlet weak var detailsWebView: UIWebView!
-    
-    @IBOutlet weak var platformLabel: UILabel!
+ 
     
     @IBOutlet weak var registerButton: UIButton!
+    
+    @IBOutlet weak var postButton: UIButton!
+  
+    @IBOutlet weak var detailsWebView: UIWebView!
+    
+    @IBOutlet weak var tweetButton: UIButton!
+    
     var serviceEndPoint : String = "http://api.topcoder.com/v2/develop/challenges/" // here challenge id will be appended at the end
     
     var challengeID : NSString = "" // This value will be set by prepareForSegue method of RealWorldChallengesTVC
@@ -32,7 +32,9 @@ class RealWorldChallengeDetailsVC: UIViewController, UIAlertViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       self.registerButton.enabled = false
+    registerButton.enabled = false
+        postButton.enabled = false
+        tweetButton.enabled = false
        getChallengeDetails()
 
         
@@ -52,7 +54,7 @@ class RealWorldChallengeDetailsVC: UIViewController, UIAlertViewDelegate {
         
         var apiURLString = "\(serviceEndPoint)\(challengeID)"
         
-        println(apiURLString)
+      
         
         Alamofire.request(.GET,apiURLString, encoding : .JSON).responseJSON
             { (request,response,JSON,error) in
@@ -67,31 +69,26 @@ class RealWorldChallengeDetailsVC: UIViewController, UIAlertViewDelegate {
             
             self.activityIndicator.stopAnimating()
             var challengeDetails : NSDictionary = JSON as NSDictionary
+                    
+                    if let directURL = challengeDetails.objectForKey("directUrl") as? NSString {
+                    
+                        self.directURL = directURL
+                        self.registerButton.enabled = true
+                        self.tweetButton.enabled = true
+                        self.postButton.enabled = true
+                    }
+
+                    if let detailedReq = challengeDetails.objectForKey("detailedRequirements") as? NSString{
+                        
+                        
+                        self.detailsWebView.loadHTMLString(detailedReq, baseURL:nil)
+
+                    
+                    }
             
-            self.directURL = challengeDetails.objectForKey("directUrl") as NSString
-            println(challengeDetails)
-          self.challengeLabel.text = challengeDetails.objectForKey("challengeName") as NSString
-           self.technologyLabel.text = (challengeDetails.objectForKey("technology") as NSArray).componentsJoinedByString(",")
-            self.platformLabel.text = (challengeDetails.objectForKey("platforms") as NSArray).componentsJoinedByString(",")
-              self.detailsWebView.loadHTMLString(challengeDetails.objectForKey("detailedRequirements") as NSString, baseURL:nil)
                     
             
-            var dateFormater : NSDateFormatter = NSDateFormatter()
-            dateFormater.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSz"
-            dateFormater.timeZone = NSTimeZone(name:"GMT")
-            var regEnd:NSDate? = dateFormater.dateFromString( challengeDetails.objectForKey("registrationEndDate") as NSString)
                     
-                    var opDateFormater : NSDateFormatter = NSDateFormatter()
-                    opDateFormater.timeZone = NSTimeZone(name:"GMT")
-                    opDateFormater.dateStyle=NSDateFormatterStyle.MediumStyle
-                    opDateFormater.timeStyle = NSDateFormatterStyle.LongStyle
-                    
-                
-           
-                    
-            self.regEndDateLabel.text = opDateFormater.stringFromDate(regEnd!)
-                    
-                self.registerButton.enabled = true
                 }
                 else{
                 
@@ -113,20 +110,12 @@ class RealWorldChallengeDetailsVC: UIViewController, UIAlertViewDelegate {
     
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
 
     @IBAction func registerForChallenge(sender: AnyObject) {
         
         if self.directURL != ""{
-            println("in")
+           
         
             var url = NSURL(string: self.directURL)
             UIApplication.sharedApplication().openURL(url)
@@ -134,8 +123,34 @@ class RealWorldChallengeDetailsVC: UIViewController, UIAlertViewDelegate {
         }
     }
     
+    @IBAction func postToFaceBook(sender: AnyObject) {
+        
+        if self.directURL != "" {
+        
+    
+            
+            var socialVC :SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+            socialVC.setInitialText("Hey check out this cool swift challenge \(self.directURL)")
+            self.presentViewController(socialVC, animated:true, completion:nil)
+        }
+        
+    }
+   
+   @IBAction func tweetChallengeDetails(sender: AnyObject) {
+        
+        
+        if self.directURL != "" {
+            
+            var socialVC :SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+            socialVC.setInitialText("Hey check out this cool swift challenge \(self.directURL)")
+            self.presentViewController(socialVC, animated:true, completion:nil)
+        }
+
+        
+    }
     
     
+
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
         self.navigationController?.popViewControllerAnimated(true)
     }

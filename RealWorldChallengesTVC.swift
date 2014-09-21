@@ -15,6 +15,11 @@ class RealWorldChallengesTVC: UITableViewController,UIAlertViewDelegate{
     // URL to get details in JSON format
     let serviceEndPoint = "http://tc-search.herokuapp.com/challenges/v2/search?q=challengeName:realworldswift%20AND%20-status:(Completed%20OR%20Cancelled%20-%20Failed%20Screening)"
     
+    
+    var serviceEndPoint1 : String = "http://api.topcoder.com/v2/develop/challenges/" // here challenge id will be appended at the end
+    
+   
+    
     var realWorldChallenges :[NSDictionary] = [] {
     
         didSet{
@@ -63,16 +68,65 @@ class RealWorldChallengesTVC: UITableViewController,UIAlertViewDelegate{
 
     
     override func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath?) -> UITableViewCell {
-        let cell = tableView!.dequeueReusableCellWithIdentifier("realWorldChallenge", forIndexPath: indexPath!) as UITableViewCell
+        let cell = tableView!.dequeueReusableCellWithIdentifier("realWorldChallenge", forIndexPath: indexPath!) as ChallengeDetailsTableViewCell
 
         
         var details = realWorldChallenges[indexPath!.row] as NSDictionary
         var source = details.objectForKey("_source") as NSDictionary
         
-        cell.textLabel?.text = source.objectForKey("challengeName") as NSString
-       var prize =  source.objectForKey("totalPrize") as Int
-        cell.detailTextLabel?.text = "$ \(prize)"
         
+        var dateFormater : NSDateFormatter = NSDateFormatter()
+        dateFormater.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSz"
+        dateFormater.timeZone = NSTimeZone(name:"GMT")
+        
+        
+        var opDateFormater : NSDateFormatter = NSDateFormatter()
+        opDateFormater.timeZone = NSTimeZone(name:"GMT")
+        opDateFormater.dateStyle=NSDateFormatterStyle.MediumStyle
+        opDateFormater.timeStyle = NSDateFormatterStyle.LongStyle
+        
+        if let challengeName = source.objectForKey("challengeName") as? NSString {
+        
+        cell.challenge.text = challengeName
+        }
+        
+        if let technology = source.objectForKey("technologies") as? NSArray {
+            
+            let technologyString = technology.componentsJoinedByString(",")
+            cell.technologyLabel.text = technologyString
+        
+            
+        }
+        if let platform = source.objectForKey("platforms") as? NSArray {
+        
+        let platfromString = platform.componentsJoinedByString(",")
+            cell.platformLabel.text = platfromString
+        
+        }
+        if let regEnd = source.objectForKey("registrationEndDate") as? NSString {
+        
+            let regEndDate = dateFormater.dateFromString(regEnd)
+            let regEndDateString = opDateFormater.stringFromDate(regEndDate!)
+            cell.regEndLabel.text = regEndDateString
+        
+        }
+        if let subEnd = source.objectForKey("submissionEndDate") as? NSString {
+        
+            let subEndDate = dateFormater.dateFromString(subEnd)
+            let subEndDateString = opDateFormater.stringFromDate(subEndDate!)
+            cell.subEndLabel.text = subEndDateString
+        
+        }
+        if let registrants = source.objectForKey("numRegistrants") as? Int {
+            
+            cell.registrantsLabel.text = "\(registrants)"
+        
+        }
+        
+        if let submisions = source.objectForKey("numSubmissions") as? Int {
+        
+        cell.submissionsLabel.text = "\(submisions)"
+        }
         
         return cell
     }
@@ -129,7 +183,10 @@ class RealWorldChallengesTVC: UITableViewController,UIAlertViewDelegate{
        var source = details.objectForKey("_source") as NSDictionary
         
         
-       destinationVC.challengeID = details.objectForKey("_id") as NSString
+       var challengeID = details.objectForKey("_id") as NSString
+        
+    destinationVC.challengeID = challengeID
+        
         
         // Pass the selected object to the new view controller.
     }
@@ -154,6 +211,7 @@ class RealWorldChallengesTVC: UITableViewController,UIAlertViewDelegate{
                 
                     var alert  = UIAlertView(title:"Error" , message:"Sorry! error in details loading. " , delegate:self, cancelButtonTitle:"Dismiss")
                     alert.show()
+                    println(response?.statusCode)
 
                 
                 }
@@ -163,6 +221,7 @@ class RealWorldChallengesTVC: UITableViewController,UIAlertViewDelegate{
                 
                 var alert  = UIAlertView(title:"Error" , message:"Sorry! error in details loading. " , delegate:self, cancelButtonTitle:"Dismiss")
                 alert.show()
+                println(error)
 
             
             }
