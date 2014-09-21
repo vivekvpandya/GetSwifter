@@ -383,8 +383,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="5IQ-6v-p1y">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="A5y-Jt-V30" id="vpK-py-rJc"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="realWorldChallenge" rowHeight="214" id="Dev-Mt-shf" customClass="ChallengeDetailsTableViewCell" customModule="GetSwifter" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="rwc" rowHeight="214" id="Dev-Mt-shf" customClass="ChallengeDetailsTableViewCell" customModule="GetSwifter" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dev-Mt-shf" id="69N-vU-ktz">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -599,10 +607,22 @@
                             <action selector="refreshTableView:" destination="A5y-Jt-V30" eventType="valueChanged" id="MR8-17-yo7"/>
                         </connections>
                     </refreshControl>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="BcM-3y-AF8" id="xFp-Dn-15S"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ex-Vd-hdZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="BcM-3y-AF8">
+                    <connections>
+                        <outlet property="delegate" destination="A5y-Jt-V30" id="qvC-eB-hyI"/>
+                        <outlet property="searchBar" destination="5IQ-6v-p1y" id="XYZ-nt-RlI"/>
+                        <outlet property="searchContentsController" destination="A5y-Jt-V30" id="Ufp-gW-VVm"/>
+                        <outlet property="searchResultsDataSource" destination="A5y-Jt-V30" id="QBP-88-k1g"/>
+                        <outlet property="searchResultsDelegate" destination="A5y-Jt-V30" id="fbJ-Pz-fbf"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1251" y="771"/>
+            <point key="canvasLocation" x="1359" y="775"/>
         </scene>
         <!--Challenge DetailsVC-->
         <scene sceneID="j9A-fh-kqb">
@@ -618,7 +638,7 @@
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CBO-CO-pOc">
                                 <rect key="frame" x="16" y="141" width="568" height="402"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </webView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detailed Description" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbK-Lc-Qpg">
                                 <rect key="frame" x="16" y="112" width="156" height="21"/>
@@ -660,7 +680,7 @@
                                 <color key="color" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.96269132653061229" green="0.96269132653061229" blue="0.96269132653061229" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="LVV-uw-GlC" firstAttribute="baseline" secondItem="at9-OH-4Ms" secondAttribute="baseline" id="0bQ-7f-pWu"/>
                             <constraint firstItem="zpd-lp-mqJ" firstAttribute="baseline" secondItem="LVV-uw-GlC" secondAttribute="baseline" id="2by-RF-dex"/>
@@ -841,6 +861,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="1cl-xu-mfu">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="DYb-ii-g7d" id="rnU-R2-u9J"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="funChallenge" rowHeight="214" id="Ash-Hf-1oB" customClass="ChallengeDetailsTableViewCell" customModule="GetSwifter" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -1057,13 +1085,25 @@
                             <action selector="refreshTableView:" destination="DYb-ii-g7d" eventType="valueChanged" id="w5i-yv-cD8"/>
                         </connections>
                     </refreshControl>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="FhB-Jy-Bo2" id="5D1-3H-LJT"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7xl-S7-5TG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="FhB-Jy-Bo2">
+                    <connections>
+                        <outlet property="delegate" destination="DYb-ii-g7d" id="NdX-E6-sYf"/>
+                        <outlet property="searchBar" destination="1cl-xu-mfu" id="MA5-RD-8cn"/>
+                        <outlet property="searchContentsController" destination="DYb-ii-g7d" id="fOO-Xj-xnB"/>
+                        <outlet property="searchResultsDataSource" destination="DYb-ii-g7d" id="gDz-fL-wuJ"/>
+                        <outlet property="searchResultsDelegate" destination="DYb-ii-g7d" id="A6k-EY-8OP"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1359" y="65.5"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cCx-eg-f9e"/>
+        <segue reference="djb-q2-vMd"/>
     </inferredMetricsTieBreakers>
 </document>

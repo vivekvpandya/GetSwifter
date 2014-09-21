@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class FunChallengesTVC: UITableViewController,UIAlertViewDelegate{
+class FunChallengesTVC: UITableViewController,UIAlertViewDelegate,UISearchBarDelegate,UISearchDisplayDelegate{
     
     
     // URL to get details in JSON format
@@ -30,6 +30,8 @@ class FunChallengesTVC: UITableViewController,UIAlertViewDelegate{
         
         
     }
+    
+    var searchResult : [NSDictionary] = []
     
     override func viewDidLoad() {
         
@@ -60,19 +62,35 @@ class FunChallengesTVC: UITableViewController,UIAlertViewDelegate{
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        
-        // println(self.realWorldChallenges.count)
+     
+        if tableView == self.searchDisplayController!.searchResultsTableView {
+            return self.searchResult.count
+        }
+        else{
         return funChallenges.count
+        }
     }
     
     
     override func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath?) -> UITableViewCell {
-        let cell = tableView!.dequeueReusableCellWithIdentifier("funChallenge", forIndexPath: indexPath!) as ChallengeDetailsTableViewCell
+        let cell = self.tableView!.dequeueReusableCellWithIdentifier("funChallenge", forIndexPath: indexPath!) as ChallengeDetailsTableViewCell
         
         
-        var details = funChallenges[indexPath!.row] as NSDictionary
-        var source = details.objectForKey("_source") as NSDictionary
+        
+        var details : NSDictionary
+        var source : NSDictionary
+        
+        if tableView == self.searchDisplayController?.searchResultsTableView{
+            details = searchResult[indexPath!.row] as NSDictionary
+        }
+        else{
+            details = funChallenges[indexPath!.row] as NSDictionary
+            
+            
+        }
+        
+        
+         source = details.objectForKey("_source") as NSDictionary
         
         
         var dateFormater : NSDateFormatter = NSDateFormatter()
@@ -177,13 +195,25 @@ class FunChallengesTVC: UITableViewController,UIAlertViewDelegate{
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         
         
-        // Get the new view controller using [segue destinationViewController].
-        
         var destinationVC : ChallengeDetailsVC = segue.destinationViewController as ChallengeDetailsVC
+        var details : NSDictionary
         
-        let indexPath :NSIndexPath  = self.tableView.indexPathForCell(sender as UITableViewCell)!
         
-        var details = funChallenges[indexPath.row] as NSDictionary
+        if (self.searchDisplayController?.active == true) {
+            
+            let indexPath : NSIndexPath = self.searchDisplayController!.searchResultsTableView.indexPathForSelectedRow()!
+            details = self.searchResult[indexPath.row] as NSDictionary
+            
+        }
+        else{
+            let indexPath :NSIndexPath  = self.tableView.indexPathForSelectedRow()!
+            details = funChallenges[indexPath.row] as NSDictionary
+            
+        }
+
+        
+        
+        
         var source = details.objectForKey("_source") as NSDictionary
         
         
@@ -192,7 +222,7 @@ class FunChallengesTVC: UITableViewController,UIAlertViewDelegate{
         destinationVC.challengeID = challengeID
         
         
-        // Pass the selected object to the new view controller.
+        
     }
     
     
@@ -236,6 +266,12 @@ class FunChallengesTVC: UITableViewController,UIAlertViewDelegate{
     }
     
     
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 241.0
+    }
+    
+    
+    
     @IBAction func refreshTableView(sender: AnyObject) {
         
         
@@ -243,7 +279,29 @@ class FunChallengesTVC: UITableViewController,UIAlertViewDelegate{
         self.refreshControl?.endRefreshing()
     }
     
+    func filterContentForSearchText(searchText: String) {
+        // Filter the array using the filter method
+        self.searchResult = self.funChallenges.filter({( challenge: NSDictionary) -> Bool in
+            
+            let source = challenge.objectForKey("_source") as NSDictionary
+            let challangeName = source.objectForKey("challengeName") as NSString
+            
+            let stringMatch = challangeName.rangeOfString(searchText)
+            return  (stringMatch.length != 0) && true
+        })
+    }
     
+    
+    func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchString searchString: String!) -> Bool {
+        self.filterContentForSearchText(searchString)
+        return true
+    }
+    
+    func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchScope searchOption: Int) -> Bool {
+        self.filterContentForSearchText(self.searchDisplayController!.searchBar.text)
+        return true
+    }
+
     
     
 }

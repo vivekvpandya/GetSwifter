@@ -9,8 +9,9 @@
 import UIKit
 import Alamofire
 
-class RealWorldChallengesTVC: UITableViewController,UIAlertViewDelegate{
+class RealWorldChallengesTVC: UITableViewController,UIAlertViewDelegate,UISearchBarDelegate,UISearchDisplayDelegate{
    
+    
     
     // URL to get details in JSON format
     let serviceEndPoint = "http://tc-search.herokuapp.com/challenges/v2/search?q=challengeName:realworldswift%20AND%20-status:(Completed%20OR%20Cancelled%20-%20Failed%20Screening)"
@@ -28,9 +29,13 @@ class RealWorldChallengesTVC: UITableViewController,UIAlertViewDelegate{
             self.tableView!.reloadData()
         }
        
-    
+        
     }
 
+    var searchResult : [NSDictionary] = []
+
+    
+    
     override func viewDidLoad() {
     
         super.viewDidLoad()
@@ -60,19 +65,33 @@ class RealWorldChallengesTVC: UITableViewController,UIAlertViewDelegate{
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-
-       // println(self.realWorldChallenges.count)
+      
+        if tableView == self.searchDisplayController!.searchResultsTableView {
+            return self.searchResult.count
+        }
+        else{
+        
         return realWorldChallenges.count
+        }
     }
 
     
     override func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath?) -> UITableViewCell {
-        let cell = tableView!.dequeueReusableCellWithIdentifier("realWorldChallenge", forIndexPath: indexPath!) as ChallengeDetailsTableViewCell
+        let cell = self.tableView!.dequeueReusableCellWithIdentifier("rwc", forIndexPath: indexPath!) as ChallengeDetailsTableViewCell
+
+        var details : NSDictionary
+        var source : NSDictionary
+        
+        if tableView == self.searchDisplayController?.searchResultsTableView{
+            details = searchResult[indexPath!.row] as NSDictionary
+        }
+        else{
+            details = realWorldChallenges[indexPath!.row] as NSDictionary
 
         
-        var details = realWorldChallenges[indexPath!.row] as NSDictionary
-        var source = details.objectForKey("_source") as NSDictionary
+        }
+        
+         source = details.objectForKey("_source") as NSDictionary
         
         
         var dateFormater : NSDateFormatter = NSDateFormatter()
@@ -178,14 +197,27 @@ class RealWorldChallengesTVC: UITableViewController,UIAlertViewDelegate{
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         
         
-        // Get the new view controller using [segue destinationViewController].
+        var details : NSDictionary
+        var source : NSDictionary
         
       var destinationVC : ChallengeDetailsVC = segue.destinationViewController as ChallengeDetailsVC
+     
         
-        let indexPath :NSIndexPath  = self.tableView.indexPathForCell(sender as UITableViewCell)!
         
-        var details = realWorldChallenges[indexPath.row] as NSDictionary
-       var source = details.objectForKey("_source") as NSDictionary
+        if (self.searchDisplayController?.active == true) {
+        
+            let indexPath : NSIndexPath = self.searchDisplayController!.searchResultsTableView.indexPathForSelectedRow()!
+            details = self.searchResult[indexPath.row] as NSDictionary
+            
+        }
+        else{
+            let indexPath :NSIndexPath  = self.tableView.indexPathForSelectedRow()!
+            details = realWorldChallenges[indexPath.row] as NSDictionary
+        
+        }
+        
+        
+        source = details.objectForKey("_source") as NSDictionary
         
         
        var challengeID = details.objectForKey("_id") as NSString
@@ -193,7 +225,7 @@ class RealWorldChallengesTVC: UITableViewController,UIAlertViewDelegate{
     destinationVC.challengeID = challengeID
         
         
-        // Pass the selected object to the new view controller.
+        
     }
 
     
@@ -237,6 +269,12 @@ class RealWorldChallengesTVC: UITableViewController,UIAlertViewDelegate{
     }
     
     
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 241.0
+    }
+    
+    
+    
     @IBAction func refreshTableView(sender: AnyObject) {
         
         
@@ -244,7 +282,27 @@ class RealWorldChallengesTVC: UITableViewController,UIAlertViewDelegate{
         self.refreshControl?.endRefreshing()
     }
     
-   
+    func filterContentForSearchText(searchText: String) {
+        // Filter the array using the filter method
+        self.searchResult = self.realWorldChallenges.filter({( challenge: NSDictionary) -> Bool in
+           
+            let source = challenge.objectForKey("_source") as NSDictionary
+            let challangeName = source.objectForKey("challengeName") as NSString
+            
+            let stringMatch = challangeName.rangeOfString(searchText)
+            return  (stringMatch.length != 0) && true
+        })
+    }
     
+    
+    func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchString searchString: String!) -> Bool {
+        self.filterContentForSearchText(searchString)
+        return true
+    }
+    
+    func searchDisplayController(controller: UISearchDisplayController!, shouldReloadTableForSearchScope searchOption: Int) -> Bool {
+        self.filterContentForSearchText(self.searchDisplayController!.searchBar.text)
+        return true
+    }
 
 }

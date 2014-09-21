@@ -32,9 +32,11 @@ class ChallengeDetailsVC: UIViewController, UIAlertViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    registerButton.enabled = false
+        registerButton.enabled = false
         postButton.enabled = false
         tweetButton.enabled = false
+    
+        
        getChallengeDetails()
 
         
