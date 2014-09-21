@@ -154,7 +154,7 @@ class CompletedChallengeVC: UITableViewController,UIAlertViewDelegate{
     
     
     // MARK: - Navigation
-    
+  /*
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         
         
@@ -172,7 +172,7 @@ class CompletedChallengeVC: UITableViewController,UIAlertViewDelegate{
         
         // Pass the selected object to the new view controller.
     }
-    
+    */
     
     
     func getCompletedChallenges() {

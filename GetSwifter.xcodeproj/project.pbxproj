@@ -10,7 +10,7 @@
 		CF0522D619CC72610067D8F2 /* RealWorldChallengesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0522D519CC72610067D8F2 /* RealWorldChallengesTVC.swift */; };
 		CF05232D19CCB1F10067D8F2 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF05232A19CCB1DD0067D8F2 /* Alamofire.framework */; };
 		CF05232F19CCB2180067D8F2 /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = CF05232A19CCB1DD0067D8F2 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		CF05233119CCBFF60067D8F2 /* RealWorldChallengeDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF05233019CCBFF60067D8F2 /* RealWorldChallengeDetailsVC.swift */; };
+		CF05233119CCBFF60067D8F2 /* ChallengeDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF05233019CCBFF60067D8F2 /* ChallengeDetailsVC.swift */; };
 		CF09A3C419CB299D00134B09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF09A3C319CB299D00134B09 /* AppDelegate.swift */; };
 		CF09A3C619CB299E00134B09 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF09A3C519CB299E00134B09 /* ViewController.swift */; };
 		CF09A3C919CB299E00134B09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF09A3C719CB299E00134B09 /* Main.storyboard */; };
@@ -81,7 +81,7 @@
 /* Begin PBXFileReference section */
 		CF0522D519CC72610067D8F2 /* RealWorldChallengesTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealWorldChallengesTVC.swift; path = ../RealWorldChallengesTVC.swift; sourceTree = "<group>"; };
 		CF05232419CCB1DD0067D8F2 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
-		CF05233019CCBFF60067D8F2 /* RealWorldChallengeDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealWorldChallengeDetailsVC.swift; sourceTree = "<group>"; };
+		CF05233019CCBFF60067D8F2 /* ChallengeDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeDetailsVC.swift; sourceTree = "<group>"; };
 		CF09A3BE19CB299D00134B09 /* GetSwifter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetSwifter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF09A3C219CB299D00134B09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF09A3C319CB299D00134B09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -188,7 +188,7 @@
 				CF95AA5D19CE175F00F1654B /* SwiftLeaderTableViewCell.swift */,
 				CFC8373D19CEB9D50062E5E3 /* SwiftAlgoLeaderTableViewCell.swift */,
 				CF7A282019CDFD8400A5E505 /* CompletedChallengeTableViewCell.swift */,
-				CF05233019CCBFF60067D8F2 /* RealWorldChallengeDetailsVC.swift */,
+				CF05233019CCBFF60067D8F2 /* ChallengeDetailsVC.swift */,
 				CF09A3CA19CB299E00134B09 /* Images.xcassets */,
 				CF09A3CC19CB299E00134B09 /* LaunchScreen.xib */,
 				CF09A3C119CB299D00134B09 /* Supporting Files */,
@@ -375,7 +375,7 @@
 				CF09A3C419CB299D00134B09 /* AppDelegate.swift in Sources */,
 				CF7A282119CDFD8400A5E505 /* CompletedChallengeTableViewCell.swift in Sources */,
 				CFC8374219CEBA360062E5E3 /* SwiftAlgoLeaderBoardTVC.swift in Sources */,
-				CF05233119CCBFF60067D8F2 /* RealWorldChallengeDetailsVC.swift in Sources */,
+				CF05233119CCBFF60067D8F2 /* ChallengeDetailsVC.swift in Sources */,
 				CF95AA6219CE190900F1654B /* SwiftLeaderBoardTVC.swift in Sources */,
 				CFC8373E19CEB9D50062E5E3 /* SwiftAlgoLeaderTableViewCell.swift in Sources */,
 				CF7A282319CDFF1E00A5E505 /* CompletedChallengeVC.swift in Sources */,

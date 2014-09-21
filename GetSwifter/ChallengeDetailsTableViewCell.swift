@@ -23,6 +23,11 @@ class ChallengeDetailsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var submissionsLabel: UILabel!
     @IBOutlet weak var registrantsLabel: UILabel!
+    
+    
+    @IBOutlet weak var totalPrize: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

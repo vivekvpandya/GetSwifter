@@ -119,7 +119,7 @@ class SwiftLeaderBoardTVC: UITableViewController,UIAlertViewDelegate{
     
     
     // MARK: - Navigation
-    
+   /*
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         
         
@@ -137,7 +137,7 @@ class SwiftLeaderBoardTVC: UITableViewController,UIAlertViewDelegate{
         
         // Pass the selected object to the new view controller.
     }
-    
+    */
     
     
     func getSwiftLeaders() {

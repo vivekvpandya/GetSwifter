@@ -128,6 +128,11 @@ class RealWorldChallengesTVC: UITableViewController,UIAlertViewDelegate{
         cell.submissionsLabel.text = "\(submisions)"
         }
         
+        if let totalPrize = source.objectForKey("totalPrize") as? Int {
+        
+        cell.totalPrize.text = "$ \(totalPrize)"
+        }
+        
         return cell
     }
 
@@ -175,7 +180,7 @@ class RealWorldChallengesTVC: UITableViewController,UIAlertViewDelegate{
         
         // Get the new view controller using [segue destinationViewController].
         
-      var destinationVC : RealWorldChallengeDetailsVC = segue.destinationViewController as RealWorldChallengeDetailsVC
+      var destinationVC : ChallengeDetailsVC = segue.destinationViewController as ChallengeDetailsVC
         
         let indexPath :NSIndexPath  = self.tableView.indexPathForCell(sender as UITableViewCell)!
         

@@ -20,7 +20,7 @@ class FunChallengesTVC: UITableViewController,UIAlertViewDelegate{
     
     
     
-    var realWorldChallenges :[NSDictionary] = [] {
+    var funChallenges :[NSDictionary] = [] {
         
         didSet{
             
@@ -35,7 +35,7 @@ class FunChallengesTVC: UITableViewController,UIAlertViewDelegate{
         
         super.viewDidLoad()
         
-        getRealWorldChallenges()
+        getFunChallenges()
         
         //realWorldChallenges = ["Vivek","Pandya"]
         
@@ -63,15 +63,15 @@ class FunChallengesTVC: UITableViewController,UIAlertViewDelegate{
         // #warning Incomplete method implementation.
         
         // println(self.realWorldChallenges.count)
-        return realWorldChallenges.count
+        return funChallenges.count
     }
     
     
     override func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath?) -> UITableViewCell {
-        let cell = tableView!.dequeueReusableCellWithIdentifier("realWorldChallenge", forIndexPath: indexPath!) as ChallengeDetailsTableViewCell
+        let cell = tableView!.dequeueReusableCellWithIdentifier("funChallenge", forIndexPath: indexPath!) as ChallengeDetailsTableViewCell
         
         
-        var details = realWorldChallenges[indexPath!.row] as NSDictionary
+        var details = funChallenges[indexPath!.row] as NSDictionary
         var source = details.objectForKey("_source") as NSDictionary
         
         
@@ -127,6 +127,10 @@ class FunChallengesTVC: UITableViewController,UIAlertViewDelegate{
             
             cell.submissionsLabel.text = "\(submisions)"
         }
+        if let totalPrize = source.objectForKey("totalPrize") as? Int{
+        
+            cell.totalPrize.text = "$ \(totalPrize)"
+        }
         
         return cell
     }
@@ -175,11 +179,11 @@ class FunChallengesTVC: UITableViewController,UIAlertViewDelegate{
         
         // Get the new view controller using [segue destinationViewController].
         
-        var destinationVC : RealWorldChallengeDetailsVC = segue.destinationViewController as RealWorldChallengeDetailsVC
+        var destinationVC : ChallengeDetailsVC = segue.destinationViewController as ChallengeDetailsVC
         
         let indexPath :NSIndexPath  = self.tableView.indexPathForCell(sender as UITableViewCell)!
         
-        var details = realWorldChallenges[indexPath.row] as NSDictionary
+        var details = funChallenges[indexPath.row] as NSDictionary
         var source = details.objectForKey("_source") as NSDictionary
         
         
@@ -193,7 +197,7 @@ class FunChallengesTVC: UITableViewController,UIAlertViewDelegate{
     
     
     
-    func getRealWorldChallenges() {
+    func getFunChallenges() {
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         Alamofire.request(.GET,serviceEndPoint, encoding : .JSON).responseJSON{(request,response,JSON,error) in
@@ -204,7 +208,7 @@ class FunChallengesTVC: UITableViewController,UIAlertViewDelegate{
                 
                 if response?.statusCode == 200 {
                     
-                    self.realWorldChallenges = JSON as [NSDictionary]
+                    self.funChallenges = JSON as [NSDictionary]
                     
                 }
                 else{
@@ -235,7 +239,7 @@ class FunChallengesTVC: UITableViewController,UIAlertViewDelegate{
     @IBAction func refreshTableView(sender: AnyObject) {
         
         
-        getRealWorldChallenges()
+        getFunChallenges()
         self.refreshControl?.endRefreshing()
     }
     

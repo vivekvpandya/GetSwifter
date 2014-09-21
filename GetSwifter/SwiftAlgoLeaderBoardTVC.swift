@@ -118,13 +118,13 @@ class SwiftAlgoLeaderBoardTVC: UITableViewController,UIAlertViewDelegate{
     
     
     // MARK: - Navigation
-    
+   /*
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         
         
         // Get the new view controller using [segue destinationViewController].
         
-        var destinationVC : RealWorldChallengeDetailsVC = segue.destinationViewController as RealWorldChallengeDetailsVC
+        var destinationVC : ChallengeDetailsVC = segue.destinationViewController as ChallengeDetailsVC
         
         let indexPath :NSIndexPath  = self.tableView.indexPathForCell(sender as UITableViewCell)!
         
@@ -137,7 +137,7 @@ class SwiftAlgoLeaderBoardTVC: UITableViewController,UIAlertViewDelegate{
         // Pass the selected object to the new view controller.
     }
     
-    
+    */
     
     func getSwiftLeaders() {
         

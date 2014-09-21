@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import Social
 
-class RealWorldChallengeDetailsVC: UIViewController, UIAlertViewDelegate {
+class ChallengeDetailsVC: UIViewController, UIAlertViewDelegate {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
  
