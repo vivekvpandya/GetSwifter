@@ -23,6 +23,19 @@ class ChallengeDetailsVC: UIViewController, UIAlertViewDelegate {
     
     @IBOutlet weak var tweetButton: UIButton!
     
+    
+    
+    @IBOutlet weak var firstPlacePrize: UILabel!
+    
+    @IBOutlet weak var secondPlacePrize: UILabel!
+    
+    @IBOutlet weak var thirdPlacePrize: UILabel!
+    
+    @IBOutlet weak var fourthPlacePrize: UILabel!
+    
+    
+    @IBOutlet weak var fifthPlacePrize: UILabel!
+    
     var serviceEndPoint : String = "http://api.topcoder.com/v2/develop/challenges/" // here challenge id will be appended at the end
     
     var challengeID : NSString = "" // This value will be set by prepareForSegue method of RealWorldChallengesTVC
@@ -84,6 +97,39 @@ class ChallengeDetailsVC: UIViewController, UIAlertViewDelegate {
                         
                         
                         self.detailsWebView.loadHTMLString(detailedReq, baseURL:nil)
+                        self.detailsWebView.layer.borderColor = UIColor.blueColor().CGColor
+                        self.detailsWebView.layer.borderWidth = 0.3
+                    
+                    }
+                    
+                    if let prize = challengeDetails.objectForKey("prize") as? NSArray {
+                    
+                    
+                        if 1 <= prize.count{
+                        if let firstPrize = prize[0] as? Int{
+                        self.firstPlacePrize.text = "$ \(firstPrize)"
+                        }
+                        }
+                        if 2 <= prize.count {
+                        if let secondPrize = prize[1] as? Int{
+                            self.secondPlacePrize.text = "$ \(secondPrize)"
+                        }
+                        }
+                        if 3 <= prize.count {
+                        if let thirdPrize = prize[2] as? Int{
+                            self.thirdPlacePrize.text = "$ \(thirdPrize)"
+                        }
+                        }
+                        if 4 <= prize.count {
+                        if let fourthPrize = prize[3] as? Int{
+                            self.fourthPlacePrize.text = "$ \(fourthPrize)"
+                        }
+                        }
+                        if 5 <= prize.count {
+                        if let fifthPrize = prize[4] as? Int{
+                            self.fifthPlacePrize.text = "$ \(fifthPrize)"
+                        }
+                        }
 
                     
                     }
