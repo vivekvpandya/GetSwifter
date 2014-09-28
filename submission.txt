@@ -1,0 +1,5 @@
+Xcode Version : 6.1 (6A1027)
+video URL : http://youtu.be/v69_z-6yPsE
+
+App uses Alamofire . It is Swift implementation of AFNetworking and it is available under MIT license.
+for more details visit  https://github.com/Alamofire/Alamofire
