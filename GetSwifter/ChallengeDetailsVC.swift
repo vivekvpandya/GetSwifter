@@ -2,15 +2,15 @@
 //  RealWorldChallengeDetailsVC.swift
 //  GetSwifter
 //
-//  Created by Vivek Pandya on 9/20/14.
-//  Copyright (c) 2014 Vivek Pandya. All rights reserved.
+
 //
 
 import UIKit
 import Alamofire
 import Social
+import MessageUI
 
-class ChallengeDetailsVC: UIViewController, UIAlertViewDelegate {
+class ChallengeDetailsVC: UIViewController, UIAlertViewDelegate, UIWebViewDelegate  {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
  
@@ -42,13 +42,15 @@ class ChallengeDetailsVC: UIViewController, UIAlertViewDelegate {
     
     var directURL : NSString = "" // this will be used to open topcoder challenge page in Safari
     
+  
 
     override func viewDidLoad() {
         super.viewDidLoad()
         registerButton.enabled = false
         postButton.enabled = false
         tweetButton.enabled = false
-    
+      detailsWebView.delegate = self
+        
         
        getChallengeDetails()
 
@@ -91,6 +93,7 @@ class ChallengeDetailsVC: UIViewController, UIAlertViewDelegate {
                         self.registerButton.enabled = true
                         self.tweetButton.enabled = true
                         self.postButton.enabled = true
+                        
                     }
 
                     if let detailedReq = challengeDetails.objectForKey("detailedRequirements") as? NSString{
@@ -197,9 +200,24 @@ class ChallengeDetailsVC: UIViewController, UIAlertViewDelegate {
         
     }
     
+ 
     
 
     func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
         self.navigationController?.popViewControllerAnimated(true)
     }
+    
+    
+    // UIWebView will open links in safari
+    
+    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        if navigationType == UIWebViewNavigationType.LinkClicked {
+        
+            UIApplication.sharedApplication().openURL(request.URL)
+            return false
+        
+        }
+        return true
+    }
+   
 }

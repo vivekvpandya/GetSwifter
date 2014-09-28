@@ -2,8 +2,7 @@
 //  RealWorldChallengesTVC.swift
 //  GetSwifter
 //
-//  Created by Vivek Pandya on 9/19/14.
-//  Copyright (c) 2014 Vivek Pandya. All rights reserved.
+
 //
 
 import UIKit
@@ -16,7 +15,7 @@ class FunChallengesTVC: UITableViewController,UIAlertViewDelegate,UISearchBarDel
     let serviceEndPoint = "http://tc-search.herokuapp.com/challenges/v2/search?q=technologies:Swift%20AND%20-status:(Completed%20OR%20Cancelled%20-%20Failed%20Screening)"
     
     
-    var serviceEndPoint1 : String = "http://api.topcoder.com/v2/develop/challenges/" // here challenge id will be appended at the end
+    
     
     
     
@@ -39,25 +38,12 @@ class FunChallengesTVC: UITableViewController,UIAlertViewDelegate,UISearchBarDel
         
         getFunChallenges()
         
-        //realWorldChallenges = ["Vivek","Pandya"]
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+            }
+   
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
+        
         return 1
     }
     
@@ -155,41 +141,13 @@ class FunChallengesTVC: UITableViewController,UIAlertViewDelegate,UISearchBarDel
     
     
     
-    // Override to support conditional editing of the table view.
+   
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
+       
         return false
     }
     
-    
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!) {
-    if editingStyle == .Delete {
-    // Delete the row from the data source
-    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-    } else if editingStyle == .Insert {
-    // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }
-    }
-    */
-    
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView!, moveRowAtIndexPath fromIndexPath: NSIndexPath!, toIndexPath: NSIndexPath!) {
-    
-    }
-    */
-    
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView!, canMoveRowAtIndexPath indexPath: NSIndexPath!) -> Bool {
-    // Return NO if you do not want the item to be re-orderable.
-    return true
-    }
-    */
-    
-    
+       
     // MARK: - Navigation
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {

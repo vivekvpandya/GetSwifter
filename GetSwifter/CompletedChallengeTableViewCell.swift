@@ -2,8 +2,7 @@
 //  CompletedChallengeTableViewCell.swift
 //  GetSwifter
 //
-//  Created by Vivek Pandya on 9/20/14.
-//  Copyright (c) 2014 Vivek Pandya. All rights reserved.
+
 //
 
 import UIKit

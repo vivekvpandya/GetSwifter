@@ -12,7 +12,6 @@
 		CF05232F19CCB2180067D8F2 /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = CF05232A19CCB1DD0067D8F2 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CF05233119CCBFF60067D8F2 /* ChallengeDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF05233019CCBFF60067D8F2 /* ChallengeDetailsVC.swift */; };
 		CF09A3C419CB299D00134B09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF09A3C319CB299D00134B09 /* AppDelegate.swift */; };
-		CF09A3C619CB299E00134B09 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF09A3C519CB299E00134B09 /* ViewController.swift */; };
 		CF09A3C919CB299E00134B09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF09A3C719CB299E00134B09 /* Main.storyboard */; };
 		CF09A3CB19CB299E00134B09 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF09A3CA19CB299E00134B09 /* Images.xcassets */; };
 		CF09A3CE19CB299E00134B09 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF09A3CC19CB299E00134B09 /* LaunchScreen.xib */; };
@@ -28,16 +27,16 @@
 		CF397FEB19CEE12500AB4C19 /* brivo-labs-250.png in Resources */ = {isa = PBXBuildFile; fileRef = CF397FE819CEE12500AB4C19 /* brivo-labs-250.png */; };
 		CF397FEC19CEE12500AB4C19 /* hpidolondemand-logo-250.png in Resources */ = {isa = PBXBuildFile; fileRef = CF397FE919CEE12500AB4C19 /* hpidolondemand-logo-250.png */; };
 		CF39800519CF163C00AB4C19 /* ChallengeDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF39800419CF163C00AB4C19 /* ChallengeDetailsTableViewCell.swift */; };
+		CF3C052619D0BE6F00BF7BF0 /* poweredby.png in Resources */ = {isa = PBXBuildFile; fileRef = CF3C052519D0BE6F00BF7BF0 /* poweredby.png */; };
 		CF53027819CE3E5B003ECACC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF53027719CE3E5B003ECACC /* QuartzCore.framework */; };
 		CF7A281919CDAD7100A5E505 /* FunChallengesTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7A281819CDAD7100A5E505 /* FunChallengesTVC.swift */; };
-		CF7A281F19CDDB0B00A5E505 /* FunChallengeDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7A281E19CDDB0B00A5E505 /* FunChallengeDetailsVC.swift */; };
 		CF7A282119CDFD8400A5E505 /* CompletedChallengeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7A282019CDFD8400A5E505 /* CompletedChallengeTableViewCell.swift */; };
 		CF7A282319CDFF1E00A5E505 /* CompletedChallengeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7A282219CDFF1E00A5E505 /* CompletedChallengeVC.swift */; };
 		CF81851519CF336E00602FE3 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF81851419CF336E00602FE3 /* Social.framework */; };
 		CF95AA5E19CE175F00F1654B /* SwiftLeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF95AA5D19CE175F00F1654B /* SwiftLeaderTableViewCell.swift */; };
 		CF95AA6219CE190900F1654B /* SwiftLeaderBoardTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF95AA6119CE190900F1654B /* SwiftLeaderBoardTVC.swift */; };
-		CFC8373E19CEB9D50062E5E3 /* SwiftAlgoLeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC8373D19CEB9D50062E5E3 /* SwiftAlgoLeaderTableViewCell.swift */; };
 		CFC8374219CEBA360062E5E3 /* SwiftAlgoLeaderBoardTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC8374119CEBA360062E5E3 /* SwiftAlgoLeaderBoardTVC.swift */; };
+		CFE2279019D1D21A00C2F805 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFE2278F19D1D21A00C2F805 /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,7 +84,6 @@
 		CF09A3BE19CB299D00134B09 /* GetSwifter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetSwifter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF09A3C219CB299D00134B09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF09A3C319CB299D00134B09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CF09A3C519CB299E00134B09 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CF09A3C819CB299E00134B09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CF09A3CA19CB299E00134B09 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CF09A3CD19CB299E00134B09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -103,16 +101,16 @@
 		CF397FE819CEE12500AB4C19 /* brivo-labs-250.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brivo-labs-250.png"; sourceTree = "<group>"; };
 		CF397FE919CEE12500AB4C19 /* hpidolondemand-logo-250.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hpidolondemand-logo-250.png"; sourceTree = "<group>"; };
 		CF39800419CF163C00AB4C19 /* ChallengeDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		CF3C052519D0BE6F00BF7BF0 /* poweredby.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = poweredby.png; sourceTree = "<group>"; };
 		CF53027719CE3E5B003ECACC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		CF7A281819CDAD7100A5E505 /* FunChallengesTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunChallengesTVC.swift; sourceTree = "<group>"; };
-		CF7A281E19CDDB0B00A5E505 /* FunChallengeDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FunChallengeDetailsVC.swift; path = ../FunChallengeDetailsVC.swift; sourceTree = "<group>"; };
 		CF7A282019CDFD8400A5E505 /* CompletedChallengeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedChallengeTableViewCell.swift; sourceTree = "<group>"; };
 		CF7A282219CDFF1E00A5E505 /* CompletedChallengeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletedChallengeVC.swift; sourceTree = "<group>"; };
 		CF81851419CF336E00602FE3 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		CF95AA5D19CE175F00F1654B /* SwiftLeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftLeaderTableViewCell.swift; sourceTree = "<group>"; };
 		CF95AA6119CE190900F1654B /* SwiftLeaderBoardTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftLeaderBoardTVC.swift; sourceTree = "<group>"; };
-		CFC8373D19CEB9D50062E5E3 /* SwiftAlgoLeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftAlgoLeaderTableViewCell.swift; sourceTree = "<group>"; };
 		CFC8374119CEBA360062E5E3 /* SwiftAlgoLeaderBoardTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftAlgoLeaderBoardTVC.swift; sourceTree = "<group>"; };
+		CFE2278F19D1D21A00C2F805 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFE2279019D1D21A00C2F805 /* MessageUI.framework in Frameworks */,
 				CF81851519CF336E00602FE3 /* Social.framework in Frameworks */,
 				CF53027819CE3E5B003ECACC /* QuartzCore.framework in Frameworks */,
 				CF05232D19CCB1F10067D8F2 /* Alamofire.framework in Frameworks */,
@@ -150,11 +149,8 @@
 		CF09A3B519CB299D00134B09 = {
 			isa = PBXGroup;
 			children = (
-				CF81851419CF336E00602FE3 /* Social.framework */,
+				CFA4D4FB19D1C12400DEF14D /* Frameworks */,
 				CF397FED19CEE12F00AB4C19 /* SponsersImages */,
-				CF53027719CE3E5B003ECACC /* QuartzCore.framework */,
-				CF09A3E719CB4FE400134B09 /* CoreFoundation.framework */,
-				CF09A3E519CB4FD500134B09 /* UIKit.framework */,
 				CF09A3C019CB299D00134B09 /* GetSwifter */,
 				CF09A3D619CB299E00134B09 /* GetSwifterTests */,
 				CF09A3BF19CB299D00134B09 /* Products */,
@@ -178,15 +174,12 @@
 				CF95AA6119CE190900F1654B /* SwiftLeaderBoardTVC.swift */,
 				CFC8374119CEBA360062E5E3 /* SwiftAlgoLeaderBoardTVC.swift */,
 				CF7A282219CDFF1E00A5E505 /* CompletedChallengeVC.swift */,
-				CF7A281E19CDDB0B00A5E505 /* FunChallengeDetailsVC.swift */,
 				CF0522D519CC72610067D8F2 /* RealWorldChallengesTVC.swift */,
 				CF7A281819CDAD7100A5E505 /* FunChallengesTVC.swift */,
 				CF09A3C319CB299D00134B09 /* AppDelegate.swift */,
-				CF09A3C519CB299E00134B09 /* ViewController.swift */,
 				CF09A3C719CB299E00134B09 /* Main.storyboard */,
 				CF39800419CF163C00AB4C19 /* ChallengeDetailsTableViewCell.swift */,
 				CF95AA5D19CE175F00F1654B /* SwiftLeaderTableViewCell.swift */,
-				CFC8373D19CEB9D50062E5E3 /* SwiftAlgoLeaderTableViewCell.swift */,
 				CF7A282019CDFD8400A5E505 /* CompletedChallengeTableViewCell.swift */,
 				CF05233019CCBFF60067D8F2 /* ChallengeDetailsVC.swift */,
 				CF09A3CA19CB299E00134B09 /* Images.xcassets */,
@@ -224,6 +217,7 @@
 		CF397FED19CEE12F00AB4C19 /* SponsersImages */ = {
 			isa = PBXGroup;
 			children = (
+				CF3C052519D0BE6F00BF7BF0 /* poweredby.png */,
 				CF397FDD19CEE10C00AB4C19 /* appirio-250.png */,
 				CF397FE719CEE12500AB4C19 /* bah-250.png */,
 				CF397FE819CEE12500AB4C19 /* brivo-labs-250.png */,
@@ -233,6 +227,18 @@
 				CF397FE019CEE10C00AB4C19 /* ntti3.png */,
 			);
 			name = SponsersImages;
+			sourceTree = "<group>";
+		};
+		CFA4D4FB19D1C12400DEF14D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CFE2278F19D1D21A00C2F805 /* MessageUI.framework */,
+				CF81851419CF336E00602FE3 /* Social.framework */,
+				CF53027719CE3E5B003ECACC /* QuartzCore.framework */,
+				CF09A3E719CB4FE400134B09 /* CoreFoundation.framework */,
+				CF09A3E519CB4FD500134B09 /* UIKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,6 +353,7 @@
 				CF397FE419CEE10C00AB4C19 /* ntti3.png in Resources */,
 				CF09A3CE19CB299E00134B09 /* LaunchScreen.xib in Resources */,
 				CF397FEA19CEE12500AB4C19 /* bah-250.png in Resources */,
+				CF3C052619D0BE6F00BF7BF0 /* poweredby.png in Resources */,
 				CF397FE119CEE10C00AB4C19 /* appirio-250.png in Resources */,
 				CF09A3CB19CB299E00134B09 /* Images.xcassets in Resources */,
 			);
@@ -367,9 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF95AA5E19CE175F00F1654B /* SwiftLeaderTableViewCell.swift in Sources */,
-				CF09A3C619CB299E00134B09 /* ViewController.swift in Sources */,
 				CF39800519CF163C00AB4C19 /* ChallengeDetailsTableViewCell.swift in Sources */,
-				CF7A281F19CDDB0B00A5E505 /* FunChallengeDetailsVC.swift in Sources */,
 				CF12E3EB19CE2A640046CB0F /* CircularProfileView.swift in Sources */,
 				CF7A281919CDAD7100A5E505 /* FunChallengesTVC.swift in Sources */,
 				CF09A3C419CB299D00134B09 /* AppDelegate.swift in Sources */,
@@ -377,7 +382,6 @@
 				CFC8374219CEBA360062E5E3 /* SwiftAlgoLeaderBoardTVC.swift in Sources */,
 				CF05233119CCBFF60067D8F2 /* ChallengeDetailsVC.swift in Sources */,
 				CF95AA6219CE190900F1654B /* SwiftLeaderBoardTVC.swift in Sources */,
-				CFC8373E19CEB9D50062E5E3 /* SwiftAlgoLeaderTableViewCell.swift in Sources */,
 				CF7A282319CDFF1E00A5E505 /* CompletedChallengeVC.swift in Sources */,
 				CF0522D619CC72610067D8F2 /* RealWorldChallengesTVC.swift in Sources */,
 			);

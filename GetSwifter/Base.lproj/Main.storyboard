@@ -19,7 +19,52 @@
                     <view key="view" contentMode="scaleToFill" id="OyF-sz-ZD0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="swift.topcoder.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpw-iy-UUX">
+                                <rect key="frame" x="216" y="91" width="169" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poweredby.png" translatesAutoresizingMaskIntoConstraints="NO" id="du9-uo-QWI">
+                                <rect key="frame" x="180" y="415" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="3tF-e1-YCY"/>
+                                    <constraint firstAttribute="height" constant="128" id="zbW-oD-bSf"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We want to help you learn Swift." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p3q-Yf-UJ7">
+                                <rect key="frame" x="178" y="173" width="245" height="20"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="0.52564952990000002" green="0.1719618192" blue="0.62643494899999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compete in development challenges" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Msi-Qp-Tou">
+                                <rect key="frame" x="160" y="258" width="280" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="for up to $50,000 cash and prizes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S0B-DJ-RYV">
+                                <rect key="frame" x="171" y="287" width="258" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="p3q-Yf-UJ7" firstAttribute="centerX" secondItem="cpw-iy-UUX" secondAttribute="centerX" id="0hQ-Sw-GIL"/>
+                            <constraint firstItem="p3q-Yf-UJ7" firstAttribute="top" secondItem="cpw-iy-UUX" secondAttribute="bottom" constant="58" id="5AW-70-cPd"/>
+                            <constraint firstItem="Msi-Qp-Tou" firstAttribute="centerX" secondItem="p3q-Yf-UJ7" secondAttribute="centerX" id="8Vl-ok-k5K"/>
+                            <constraint firstItem="cpw-iy-UUX" firstAttribute="top" secondItem="ExD-Fn-ZTr" secondAttribute="bottom" constant="27" id="BIl-tz-mBm"/>
+                            <constraint firstItem="Msi-Qp-Tou" firstAttribute="top" secondItem="p3q-Yf-UJ7" secondAttribute="bottom" constant="65" id="HaY-gP-znm"/>
+                            <constraint firstItem="S0B-DJ-RYV" firstAttribute="top" secondItem="Msi-Qp-Tou" secondAttribute="bottom" constant="8" symbolic="YES" id="J5g-Ya-urs"/>
+                            <constraint firstItem="S0B-DJ-RYV" firstAttribute="centerX" secondItem="OyF-sz-ZD0" secondAttribute="centerX" id="Qtk-5T-iLY"/>
+                            <constraint firstItem="uVn-lN-gc2" firstAttribute="top" secondItem="du9-uo-QWI" secondAttribute="bottom" constant="8" symbolic="YES" id="fMj-83-iw6"/>
+                            <constraint firstItem="S0B-DJ-RYV" firstAttribute="centerX" secondItem="Msi-Qp-Tou" secondAttribute="centerX" id="grT-1o-A4g"/>
+                            <constraint firstItem="du9-uo-QWI" firstAttribute="centerX" secondItem="S0B-DJ-RYV" secondAttribute="centerX" id="mnK-NR-byv"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="About" id="QUX-qc-vxp"/>
                 </viewController>
@@ -138,7 +183,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.98048867984693877" green="0.98048867984693877" blue="0.98048867984693877" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="challengeTitle" destination="7Xc-DK-o7c" id="Kwf-PQ-EI5"/>
                                     <outlet property="numSubmissionLabel" destination="9Oj-tK-bWP" id="qDp-JD-utg"/>
@@ -240,7 +284,7 @@
                                 <rect key="frame" x="459" y="438" width="125" height="55"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thanks to our sponsers! " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yiy-jN-h6T">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thanks to our sponsors! " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yiy-jN-h6T">
                                 <rect key="frame" x="145" y="507" width="311" height="36"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -287,7 +331,7 @@
                             <constraint firstItem="VE1-OI-zTe" firstAttribute="trailing" secondItem="bvm-d8-oLb" secondAttribute="trailing" id="ynI-QH-3LQ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Our Sponsers" id="SDa-6q-Xvf"/>
+                    <navigationItem key="navigationItem" title="Our Sponsors" id="SDa-6q-Xvf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i6z-Fa-1lg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -373,6 +417,9 @@
                     <navigationItem key="navigationItem" title="Swift Challenges Leaderboard" id="t5S-99-92o"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="2t9-dw-3T1">
                         <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refreshTableView:" destination="Axk-Vv-4BS" eventType="valueChanged" id="7y5-00-zOv"/>
+                        </connections>
                     </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lyX-BG-c61" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -412,9 +459,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="h4k-kR-Ug2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.11249237301297073" green="0.54155351207878377" blue="0.91324537627551017" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -687,7 +733,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CBO-CO-pOc">
+                            <webView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CBO-CO-pOc">
                                 <rect key="frame" x="16" y="194" width="568" height="349"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </webView>
@@ -725,6 +771,9 @@
                                     <color key="titleColor" red="0.0" green="0.50196081399917603" blue="0.25098040699958801" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="disabled">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="registerForChallenge:" destination="qG6-Pf-f6q" eventType="touchUpInside" id="qm2-48-N4Q"/>
                                 </connections>
@@ -733,7 +782,7 @@
                                 <rect key="frame" x="290" y="359" width="20" height="21"/>
                                 <color key="color" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$ 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygi-SV-xYa">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygi-SV-xYa">
                                 <rect key="frame" x="16" y="136" width="53" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="14"/>
                                 <color key="textColor" red="1" green="0.33120293032073167" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -745,7 +794,7 @@
                                 <color key="textColor" red="1" green="0.33120293032073167" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$ 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2jC-1C-g2f">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2jC-1C-g2f">
                                 <rect key="frame" x="79" y="136" width="53" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="14"/>
                                 <color key="textColor" red="0.5510851942500169" green="0.62643494897959184" blue="0.0010930082720951623" alpha="1" colorSpace="calibratedRGB"/>
@@ -757,7 +806,7 @@
                                 <color key="textColor" red="0.5510851942500169" green="0.62643494897959184" blue="0.0010930082720951623" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$ 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MCM-jy-QJm">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MCM-jy-QJm">
                                 <rect key="frame" x="142" y="136" width="53" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.4768415178571429" blue="0.24044827875523503" alpha="1" colorSpace="calibratedRGB"/>
@@ -769,7 +818,7 @@
                                 <color key="textColor" red="0.0" green="0.4768415178571429" blue="0.24044827875523503" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$ 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZxT-eV-sMP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZxT-eV-sMP">
                                 <rect key="frame" x="205" y="136" width="53" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="14"/>
                                 <color key="textColor" red="0.1571773913" green="0.61964570320000001" blue="0.95238759569999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -781,7 +830,7 @@
                                 <color key="textColor" red="0.1571773913" green="0.61964570320000001" blue="0.95238759569999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$ 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ylR-6r-HU8">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ylR-6r-HU8">
                                 <rect key="frame" x="266" y="136" width="53" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="14"/>
                                 <color key="textColor" red="0.0007764055105337652" green="0.37431996664380013" blue="0.8585379464285714" alpha="1" colorSpace="calibratedRGB"/>
@@ -844,11 +893,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dw6-DO-7oR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="1" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -869,9 +915,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mWn-eC-eae">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.779296875" green="0.16770214569101469" blue="0.35725413502635744" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -892,9 +937,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="toQ-VJ-cEU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.779296875" green="0.1677021457" blue="0.35725413499999997" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -906,16 +950,16 @@
             </objects>
             <point key="canvasLocation" x="-765" y="824"/>
         </scene>
-        <!--Leaderboard for Swfit Challenges-->
+        <!--Leaderboard for Swfit Algorithm Challenges-->
         <scene sceneID="Wo2-wb-kdp">
             <objects>
-                <tableViewController title="Leaderboard for Swfit Challenges" id="5X3-ee-lDh" customClass="SwiftAlgoLeaderBoardTVC" customModule="GetSwifter" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Leaderboard for Swfit Algorithm Challenges" id="5X3-ee-lDh" customClass="SwiftAlgoLeaderBoardTVC" customModule="GetSwifter" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="197" sectionHeaderHeight="22" sectionFooterHeight="22" id="iRz-F2-4WB">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="swiftLeader" rowHeight="197" id="I1D-Rd-7lB" customClass="SwiftAlgoLeaderTableViewCell" customModule="GetSwifter" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="swiftLeader" rowHeight="197" id="I1D-Rd-7lB" customClass="SwiftLeaderTableViewCell" customModule="GetSwifter" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="I1D-Rd-7lB" id="dYS-hz-xP9">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -986,6 +1030,9 @@
                     <navigationItem key="navigationItem" title="Swift Algorithms Leaderboard" id="Wae-7c-yLQ"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="SMp-ve-TbQ">
                         <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refreshTableView:" destination="5X3-ee-lDh" eventType="valueChanged" id="zwe-zW-jzR"/>
+                        </connections>
                     </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NN6-QL-NJb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1250,9 +1297,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rnt-8O-bKn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.0" green="0.47684151790000001" blue="0.2404482788" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1273,9 +1319,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Cri-9a-dw0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.94610969387755106" green="0.78040541285807674" blue="0.048872935664889074" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1296,9 +1341,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fcS-xd-VP9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.52564952991102432" green="0.17196181916402034" blue="0.62643494899999996" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1326,6 +1370,7 @@
         <image name="harman-250.png" width="250" height="106"/>
         <image name="hpidolondemand-logo-250.png" width="250" height="47"/>
         <image name="ntti3.png" width="179" height="111"/>
+        <image name="poweredby.png" width="389" height="92"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="cCx-eg-f9e"/>
